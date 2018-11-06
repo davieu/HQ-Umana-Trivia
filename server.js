@@ -42,7 +42,7 @@ let questions = [];
 let currentCorrectUsers = [];
 let Users = [];
 let currentQuestionNum = 1;
-let maxQuestions = 5;
+let maxQuestions = 3;
 let lobby = [];
 let currentQuestion = null;
 
@@ -81,9 +81,9 @@ function nextQuestion(socket) {
                 io.emit('gameover', (currentCorrectUsers))
             }
             clearInterval(NewQuestionCountdown);
-        }, 5000);
+        }, 3000);
         clearInterval(QuestionCountdown);
-    }, 10000);
+    }, 5000);
 }
 //num players screenLeft. count array
 //hook up game over-screen
@@ -106,6 +106,7 @@ function onConnection(socket) {
     })
 
     socket.on('start-game', (data) => {
+        Users = [];
         nextQuestion(socket);
     })
 
