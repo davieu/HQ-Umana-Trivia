@@ -9,7 +9,7 @@ class Header extends Component {
                 <div className="row mt-5">
                   <div className="col-12 text-center text-light">
                     <h1><b>HQumana</b></h1>
-                    <p className="lead">A real-time trivia game implementing web sockets. TEST</p>
+                    <p className="lead">A real-time trivia game implementing web sockets.</p>
                     {/* <Link to={'/'} className="link-text"> Home </Link>
 
                     <Link to={'/lobby'} className="link-text"> Lobby </Link>

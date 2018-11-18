@@ -79,9 +79,10 @@ function nextQuestion(socket) {
             }else {
                 //send endgame message
                 io.emit('gameover', (currentCorrectUsers))
+                currentQuestionNum = 1
             }
             clearInterval(NewQuestionCountdown);
-        }, 3000);
+        }, 5000);
         clearInterval(QuestionCountdown);
     }, 5000);
 }
@@ -106,7 +107,6 @@ function onConnection(socket) {
     })
 
     socket.on('start-game', (data) => {
-        Users = [];
         nextQuestion(socket);
     })
 

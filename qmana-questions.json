@@ -34,7 +34,7 @@
     ]
   },
   {
-    "id": 10,
+    "id": 3,
     "prompt": "In humans, what is the only internal organ capable of regenerating lost tissue?",
     "choices": [
       "Heart",
@@ -51,7 +51,7 @@
     ]
   },
   {
-    "id": 11,
+    "id": 4,
     "prompt": "Which of these REST actions is *mismatched* to its CRUD verb?",
     "choices": [
       "CREATE - INSERT",
@@ -68,7 +68,7 @@
     ]
   },
   {
-    "id": 13,
+    "id": 5,
     "prompt": "What dog breed is half-dog tall and a dog-and-a-half long?",
     "choices": [
       "German Sheperd",

@@ -23,7 +23,7 @@ class Home extends Component {
 
     submitUser = (data) => {
       console.log('signing up user', data)
-      debugger;
+      // debugger;
         if(data.username != ''){
             this.props.socket.emit('add-user', data)
             this.props.history.push('/lobby')
