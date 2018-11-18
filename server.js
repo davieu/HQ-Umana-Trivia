@@ -45,6 +45,7 @@ let currentQuestionNum = 1;
 let maxQuestions = 5;
 let lobby = [];
 let currentQuestion = null;
+//this is the array for the shuffle.
 let arr = [0, 1, 2, 3, 4];
 
 app.use(bodyParser.json())
@@ -57,6 +58,7 @@ fs.readFile(__dirname+"/qmana-questions.json", 'utf8', (err, data) => {
     questions = JSON.parse(data);
   });
 
+//shuffle function for questions
 function shuffle(a) {
     var j, x, i;
     for (i = a.length - 1; i > 0; i--) {
@@ -67,7 +69,7 @@ function shuffle(a) {
     }
     return a;
 }
-
+//initial shuffle arr that is used to randomize questions
 let shuffledArr = shuffle(arr)
 console.log('outside:', shuffledArr)
 
@@ -105,7 +107,7 @@ function nextQuestion(socket) {
             clearInterval(NewQuestionCountdown);
         }, 5000);
         clearInterval(QuestionCountdown);
-    }, 5000);
+    }, 9000);
 }
 //num players screenLeft. count array
 //hook up game over-screen
