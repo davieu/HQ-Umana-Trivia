@@ -36,7 +36,7 @@ class Lobby extends Component {
                   </div>
                 </div>
               </div>
-              <button type='button' onClick={() => { this.startGame() }} className="btn btn-primary btn-block mt-5"></button>
+              <button type='button' onClick={() => { this.startGame() }} className="btn btn-fill btn-block mt-5">Start Game</button>
           </div>
               
         )

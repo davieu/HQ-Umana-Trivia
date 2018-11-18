@@ -41,7 +41,7 @@ class Home extends Component {
                       <form>
                         <input value={this.state.username}  onChange={(event) =>{this.setState({username: event.target.value})}} placeholder="Username" type="text" className="username" required />
                                   <label className="mb-5">Username Required</label>
-                        <button type='button' onClick={() => { this.submitUser(this.state) }} className="btn btn-primary btn-block mt-5"> Sign In </button>
+                        <button type='button' onClick={() => { this.submitUser(this.state) }} className="btn btn-fill btn-block mt-5"> Sign In </button>
                       </form>
                     </div>
                   </div>

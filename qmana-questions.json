@@ -8,13 +8,7 @@
       "Whiskey",
       "Moonshine"
     ],
-    "answer": "Moonshine",
-    "links": [
-      {
-        "href": "www.google.com",
-        "text": "LMGTFY"
-      }
-    ]
+    "answer": "Moonshine"
   },
   {
     "id": 2,
@@ -25,13 +19,7 @@
       "Potato otatop",
       "Mrs. Potato"
     ],
-    "answer": "Solanum tuberosum L.",
-    "links": [
-      {
-        "href": "www.google.com",
-        "text": "LMGTFY"
-      }
-    ]
+    "answer": "Solanum tuberosum L."
   },
   {
     "id": 3,
@@ -42,13 +30,7 @@
       "Kidney",
       "Liver"
     ],
-    "answer": "Liver",
-    "links": [
-      {
-        "href": "www.google.com",
-        "text": "LMGTFY"
-      }
-    ]
+    "answer": "Liver"
   },
   {
     "id": 4,
@@ -59,13 +41,7 @@
       "PATCH - UPDATE",
       "DESTROY - DELETE"
     ],
-    "answer": "CREATE - INSERT",
-    "links": [
-      {
-        "href": "www.google.com",
-        "text": "LMGTFY"
-      }
-    ]
+    "answer": "CREATE - INSERT"
   },
   {
     "id": 5,
@@ -76,12 +52,6 @@
       "Dachshund",
       "Labrador"
     ],
-    "answer": "Dachshund",
-    "links": [
-      {
-        "href": "www.google.com",
-        "text": "LMGTFY"
-      }
-    ]
+    "answer": "Dachshund"
   }
 ]

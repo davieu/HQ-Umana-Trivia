@@ -42,9 +42,10 @@ let questions = [];
 let currentCorrectUsers = [];
 let Users = [];
 let currentQuestionNum = 1;
-let maxQuestions = 3;
+let maxQuestions = 5;
 let lobby = [];
 let currentQuestion = null;
+let arr = [0, 1, 2, 3, 4];
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -56,8 +57,27 @@ fs.readFile(__dirname+"/qmana-questions.json", 'utf8', (err, data) => {
     questions = JSON.parse(data);
   });
 
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+
+let shuffledArr = shuffle(arr)
+console.log('outside:', shuffledArr)
+
 function getNewQuestion() {
-    return questions[Math.floor(Math.random()*questions.length)];
+    // console.log('inside:', shuffledArr)
+    // console.log('currentQuestionNum:', currentQuestionNum)
+    // console.log('output:', [shuffledArr[currentQuestionNum - 1]])
+    // console.log('question:', questions[shuffledArr[currentQuestionNum - 1]])
+    return questions[shuffledArr[currentQuestionNum - 1]];
+
 }
 
 function nextQuestion(socket) {
@@ -80,6 +100,7 @@ function nextQuestion(socket) {
                 //send endgame message
                 io.emit('gameover', (currentCorrectUsers))
                 currentQuestionNum = 1
+                shuffledArr = shuffle(arr)
             }
             clearInterval(NewQuestionCountdown);
         }, 5000);
