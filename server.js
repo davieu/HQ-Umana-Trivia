@@ -123,6 +123,7 @@ function onConnection(socket) {
         let newUser = { username: data.username, id: socket.client.id }
         Users.push(newUser)
         io.emit('new-player', (Users))
+        // socket.emit('new-player', (newUser))
         console.log('sending question');
         //takes in all logic for handling one funciton
         //keep track of how many question and how many left. counter for how many questions per game
