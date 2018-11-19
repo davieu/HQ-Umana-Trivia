@@ -6,9 +6,11 @@ import QuestionResults from'./QuestionResults';
 import Questions from './Questions';
 import Home from './Home';
 import Lobby from './Lobby';
-// import { connect } from 'react-redux';
 import { socketConnect } from 'socket.io-react';
-// import { bindActionCreators } from 'redux';
+///////
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+///////
 
 class App extends Component {
   constructor(props) {
@@ -20,10 +22,15 @@ class App extends Component {
       currentAnswer: '',
       lobby: [],
       users: [],
+      user:null
     }
   }
 
   componentDidMount = () => {
+
+    // this.props.socket.on('new-player', (data) => {
+    //   this.setState({ user: data.username });
+    // })
 
     this.props.socket.on('new-question',(data) => {
       console.log("new question ", this)

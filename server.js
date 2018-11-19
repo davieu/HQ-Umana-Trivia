@@ -121,8 +121,14 @@ function onConnection(socket) {
     console.log('connected', socket.id)
     socket.on('add-user', (data) => {
         let newUser = { username: data.username, id: socket.client.id }
+        let myClient = [ { username: data.username, id: socket.client.id } ]
         Users.push(newUser)
+        // myPlayer.push(myClient)
+        console.log(Users)
+        console.log(newUser)
+        console.log(myClient)
         io.emit('new-player', (Users))
+        socket.emit('my-player', (myClient))
         // socket.emit('new-player', (newUser))
         console.log('sending question');
         //takes in all logic for handling one funciton

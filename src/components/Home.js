@@ -14,12 +14,17 @@ class Home extends Component {
     }
 
     componentDidMount = () => {
-    
+
     }
 
-    // componentWillUnmount = () => {
-    //     clearInterval()
-    // }
+  //   componentDidMount = () => {
+  //     //interval updates amount of users playing
+  //     this.props.fetchUsers();
+  //     setInterval(() => { this.props.fetchUsers() }, 3000)
+  // }
+  // componentWillUnmount = () => {
+  //     clearInterval()
+  // }
 
     submitUser = (data) => {
       console.log('signing up user', data)
@@ -30,6 +35,18 @@ class Home extends Component {
         }
     }
 
+    handleEnter = (e) => {
+      if (e.key == 'Enter') {
+          this.submitUser(this.state);
+      }
+  }
+
+/////////////////////////////
+
+  //////////////////////////
+
+    
+
     render () {
         return (
             <div className="container" >
@@ -38,8 +55,9 @@ class Home extends Component {
                   <div className="card shadow pt-3 pb-3">
                     <div className="card-body">
                       <h1 className="text-center mb-4">Lets get started!</h1>
+
                       <form>
-                        <input value={this.state.username}  onChange={(event) =>{this.setState({username: event.target.value})}} placeholder="Username" type="text" className="username" required />
+                        <input onKeyPress={(e) => this.handleEnter(e)} value={this.state.username}  onChange={(event) =>this.setState({username: event.target.value})} value={this.state.username} placeholder="Username" type="text" className="username" required />
                                   <label className="mb-5">Username Required</label>
                         <button type='button' onClick={() => { this.submitUser(this.state) }} className="btn btn-fill btn-block mt-5"> Sign In </button>
                       </form>
