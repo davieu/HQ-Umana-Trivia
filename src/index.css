@@ -137,3 +137,22 @@ button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
+
+.CustomTriggerCSS {
+  background-color: white;
+  color: var(--site-main-color);
+  transition: 0.35s;
+  border-color: var(--site-main-color);
+  border-width: 2px;
+  transition: 0.35s;
+  font-weight: bold;
+}
+
+.CustomTriggerCSS--open {
+  box-shadow: inset 0 0 0 20px var(--site-main-color);
+  border-width: 2px;
+  border-color: var(--site-main-color);
+  background-color: var(--site-main-color);
+  color: white; 
+  font-weight: bold;
+}

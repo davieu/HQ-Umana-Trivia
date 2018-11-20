@@ -14,7 +14,7 @@ class Home extends Component {
     }
 
     componentDidMount = () => {
-
+      
     }
 
   //   componentDidMount = () => {
@@ -32,6 +32,7 @@ class Home extends Component {
         if(data.username != ''){
             this.props.socket.emit('add-user', data)
             this.props.history.push('/lobby')
+            console.log('submit user', data)
         }
     }
 
@@ -57,7 +58,7 @@ class Home extends Component {
                       <h1 className="text-center mb-4">Lets get started!</h1>
 
                       <form>
-                        <input onKeyPress={(e) => this.handleEnter(e)} value={this.state.username}  onChange={(event) =>this.setState({username: event.target.value})} value={this.state.username} placeholder="Username" type="text" className="username" required />
+                        <input onKeyPress={(e) => this.handleEnter(e)} value={this.state.username}  onChange={(event) =>this.setState({username: event.target.value})} value={this.state.username} maxLength='8' placeholder="Username" type="text" className="username" required />
                                   <label className="mb-5">Username Required</label>
                         <button type='button' onClick={() => { this.submitUser(this.state) }} className="btn btn-fill btn-block mt-5"> Sign In </button>
                       </form>

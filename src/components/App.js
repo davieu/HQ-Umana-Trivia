@@ -71,7 +71,3 @@ class App extends Component {
 };
 
 export default withRouter(socketConnect(App));
-
-
-
-

@@ -42,11 +42,12 @@ let questions = [];
 let currentCorrectUsers = [];
 let Users = [];
 let currentQuestionNum = 1;
-let maxQuestions = 5;
+let maxQuestions = 2;
 let lobby = [];
 let currentQuestion = null;
 //this is the array for the shuffle.
-let arr = [0, 1, 2, 3, 4];
+// let arr = [0, 1, 2, 3, 4];
+let arr = [0, 1];
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -105,9 +106,9 @@ function nextQuestion(socket) {
                 shuffledArr = shuffle(arr)
             }
             clearInterval(NewQuestionCountdown);
-        }, 5000);
+        }, 2500);
         clearInterval(QuestionCountdown);
-    }, 9000);
+    }, 2500);
 }
 //num players screenLeft. count array
 //hook up game over-screen
@@ -155,5 +156,4 @@ io.on('connection', onConnection);
 
 
 http.listen(port, () => console.log('listening on port ' + port));
-
 
