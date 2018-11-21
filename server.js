@@ -42,12 +42,12 @@ let questions = [];
 let currentCorrectUsers = [];
 let Users = [];
 let currentQuestionNum = 1;
-let maxQuestions = 2;
+let maxQuestions = 5
 let lobby = [];
 let currentQuestion = null;
 //this is the array for the shuffle.
-// let arr = [0, 1, 2, 3, 4];
-let arr = [0, 1];
+let arr = [0, 1, 2, 3, 4];
+// let arr = [0, 1];
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -100,15 +100,24 @@ function nextQuestion(socket) {
                 //add some logic to tell if you want to ask question or tell if game is over.
                 nextQuestion(socket);
             }else {
+                let poop = Users
+                let jim = poop.map(cur => {return cur.username})
+                console.log(jim)
                 //send endgame message
-                io.emit('gameover', (currentCorrectUsers))
+                // io.emit('gameover', (currentCorrectUsers))
+                io.emit('gameover', currentCorrectUsers)
+                // io.emit('gameover', ([currentCorrectUsers, Users]))
+                console.log('poop: ', currentCorrectUsers, [Users])
+                // io.emit('gameover', (Users))
+                console.log('users: ', Users)
+                // io.emit('gameover', (Users))
                 currentQuestionNum = 1
                 shuffledArr = shuffle(arr)
             }
             clearInterval(NewQuestionCountdown);
-        }, 2500);
+        }, 5000);
         clearInterval(QuestionCountdown);
-    }, 2500);
+    }, 9000);
 }
 //num players screenLeft. count array
 //hook up game over-screen
@@ -144,6 +153,7 @@ function onConnection(socket) {
     socket.on('choice', (data) => {
         if (data.answer === currentQuestion.answer ) {
             currentCorrectUsers.push(data.id)
+            console.log('choice:', data)
         }
     })
 }

@@ -1,10 +1,13 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class WinnerPage extends Component {
 
     render() {
+      console.log(this.state)
+      console.log(this.props)
       if (this.props.state.currentCorrectUsers.length === 0) {
         return (
           <div className="container mt-5">

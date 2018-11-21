@@ -19,6 +19,7 @@ class Questions extends Component {
     console.log(answer, id)
         this.props.socket.emit('choice', {'answer': answer, 'id': id})
         this.setState({currentAnswer: answer})
+        {console.log('questions1 props: ', this.props)}
       }
       
     render() {
@@ -33,6 +34,7 @@ class Questions extends Component {
                         <button disabled={this.state.currentAnswer != '' && this.state.currentAnswer != this.props.state.question.choices[1] ? true : false} className="btn btn-fill mt-2" type="button" onClick={()=> {this.submitAnswer(this.props.state.question.choices[1], this.props.socket.id)}}>{this.props.state.question.choices[1]}</button><br/>
                         <button disabled={this.state.currentAnswer != '' && this.state.currentAnswer != this.props.state.question.choices[2] ? true : false} className="btn btn-fill mt-2" type="button" onClick={()=> {this.submitAnswer(this.props.state.question.choices[2], this.props.socket.id)}}>{this.props.state.question.choices[2]}</button><br/>
                         <button disabled={this.state.currentAnswer != '' && this.state.currentAnswer != this.props.state.question.choices[3] ? true : false} className="btn btn-fill mt-2" type="button" onClick={()=> {this.submitAnswer(this.props.state.question.choices[3], this.props.socket.id)}}>{this.props.state.question.choices[3]}</button>
+                        {console.log('questions2 props: ', this.props)}
                       </div>
                     </div>
                   </div>
